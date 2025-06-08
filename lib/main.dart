@@ -14,12 +14,12 @@ void main() {
         primaryColor: Color(0xFFE0B219),
         scaffoldBackgroundColor: Color(0xFFF8FAFC),
         appBarTheme: AppBarTheme(
-          backgroundColor: Color(0xFFE0B219),
+          backgroundColor: Color(0xFFFF7F00),
           foregroundColor: Colors.white,
           elevation: 0,
         ),
         bottomNavigationBarTheme: BottomNavigationBarThemeData(
-          selectedItemColor: Color(0xFFE0B219),
+          selectedItemColor: Color(0xFFFF7F00),
         ),
       ),
       initialRoute: AppPages.INITIAL,

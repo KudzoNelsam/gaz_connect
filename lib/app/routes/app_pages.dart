@@ -1,5 +1,7 @@
 import 'package:get/get.dart';
 
+import '../modules/conso/bindings/conso_binding.dart';
+import '../modules/conso/views/conso_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
 import '../modules/login/bindings/login_binding.dart';
@@ -36,6 +38,11 @@ class AppPages {
       name: _Paths.SETTINGS,
       page: () => const SettingsView(),
       binding: SettingsBinding(),
+    ),
+    GetPage(
+      name: _Paths.CONSO,
+      page: () => const ConsoView(),
+      binding: ConsoBinding(),
     ),
   ];
 }

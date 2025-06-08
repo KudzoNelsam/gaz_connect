@@ -22,6 +22,7 @@ class MainLayoutView extends GetView<NavigationController> {
       appBar: AppBar(title: Text(title), centerTitle: true),
       body: body,
       bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed, //
         items: items,
         currentIndex: controller.getIndexForRoute(
           controller.currentRoute.value,

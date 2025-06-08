@@ -9,6 +9,7 @@ class NavigationController extends GetxController {
   final Map<String, String> routeMap = {
     Routes.HOME: Routes.HOME,
     Routes.SECURITE: Routes.SECURITE,
+    Routes.CONSO: Routes.CONSO,
     Routes.SETTINGS: Routes.SETTINGS,
   };
 
