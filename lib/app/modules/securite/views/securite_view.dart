@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:gaz_connect/app/modules/securite/contacts/contact_function.dart';
 import 'package:gaz_connect/app/modules/securite/contacts/emergency_contacts_controller.dart';
+import 'package:gaz_connect/app/modules/securite/incidents/get_incident_journal.dart';
+import 'package:gaz_connect/app/modules/securite/incidents/incidents_controller.dart';
 import 'package:gaz_connect/app/modules/securite/security_settings/security_settings_card.dart';
 import 'package:gaz_connect/app/modules/securite/security_settings/securiy_settings_controller.dart';
 import 'package:gaz_connect/app/modules/securite/system/get_system_test.dart';
@@ -26,6 +28,9 @@ class SecuriteView extends GetView<SecuriteController> {
     final SystemTestController systemTestController = Get.put(
       SystemTestController(),
     );
+    final IncidentsController incidentsController = Get.put(
+      IncidentsController(),
+    );
 
     final body = SingleChildScrollView(
       child: Column(
@@ -34,6 +39,8 @@ class SecuriteView extends GetView<SecuriteController> {
           getOptions(controller),
           getContacts(contactController),
           getSystemTest(systemTestController),
+          // Votre widget des incidents - reproduction exacte de l'image
+          getIncidentsJournal(incidentsController),
         ],
       ),
     );
