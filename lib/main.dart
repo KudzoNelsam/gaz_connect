@@ -9,6 +9,7 @@ void main() {
   Get.put(NavigationController());
   runApp(
     GetMaterialApp(
+      debugShowCheckedModeBanner: false,
       title: "Application",
       theme: ThemeData(
         primaryColor: Color(0xFFE0B219),
