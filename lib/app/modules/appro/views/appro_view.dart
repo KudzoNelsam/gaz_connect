@@ -13,7 +13,9 @@ class ApproView extends GetView<ApproController> {
   Widget build(BuildContext context) {
     final LivraisonController controller = Get.put(LivraisonController());
     final body = SingleChildScrollView(
-      child: Column(children: [getLivraisonWidget(controller)]),
+      child: Column(
+        children: [SizedBox(height: 20), getLivraisonWidget(controller)],
+      ),
     );
     return ClientView(body: body);
   }
