@@ -8,6 +8,7 @@ abstract class Routes {
   static const SECURITE = _Paths.SECURITE;
   static const SETTINGS = _Paths.SETTINGS;
   static const CONSO = _Paths.CONSO;
+  static const APPRO = _Paths.APPRO;
 }
 
 abstract class _Paths {
@@ -17,4 +18,5 @@ abstract class _Paths {
   static const SECURITE = '/securite';
   static const SETTINGS = '/settings';
   static const CONSO = '/conso';
+  static const APPRO = '/appro';
 }

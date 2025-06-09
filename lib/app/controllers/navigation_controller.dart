@@ -10,6 +10,7 @@ class NavigationController extends GetxController {
     Routes.HOME: Routes.HOME,
     Routes.SECURITE: Routes.SECURITE,
     Routes.CONSO: Routes.CONSO,
+    Routes.APPRO: Routes.APPRO,
     Routes.SETTINGS: Routes.SETTINGS,
   };
 

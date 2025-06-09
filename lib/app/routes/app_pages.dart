@@ -1,5 +1,7 @@
 import 'package:get/get.dart';
 
+import '../modules/appro/bindings/appro_binding.dart';
+import '../modules/appro/views/appro_view.dart';
 import '../modules/conso/bindings/conso_binding.dart';
 import '../modules/conso/views/conso_view.dart';
 import '../modules/home/bindings/home_binding.dart';
@@ -43,6 +45,11 @@ class AppPages {
       name: _Paths.CONSO,
       page: () => const ConsoView(),
       binding: ConsoBinding(),
+    ),
+    GetPage(
+      name: _Paths.APPRO,
+      page: () => const ApproView(),
+      binding: ApproBinding(),
     ),
   ];
 }

@@ -16,13 +16,23 @@ class ClientView extends GetView {
         BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Accueil'),
         BottomNavigationBarItem(icon: Icon(Icons.shield), label: 'Securité'),
         BottomNavigationBarItem(icon: Icon(Icons.bar_chart), label: 'Conso'),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.delivery_dining),
+          label: 'Appro',
+        ),
 
         BottomNavigationBarItem(
           icon: Icon(Icons.settings),
           label: 'Paramètres',
         ),
       ],
-      itemLabels: [Routes.HOME, Routes.SECURITE, Routes.CONSO, Routes.SETTINGS],
+      itemLabels: [
+        Routes.HOME,
+        Routes.SECURITE,
+        Routes.CONSO,
+        Routes.APPRO,
+        Routes.SETTINGS,
+      ],
       body: body,
     );
     // return Text("data");
