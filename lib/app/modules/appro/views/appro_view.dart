@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:gaz_connect/app/modules/appro/livraison/get_livraison_widget.dart';
+import 'package:gaz_connect/app/modules/appro/livraison/livraison_controller.dart';
 import 'package:gaz_connect/app/views/views/client_view.dart';
 
 import 'package:get/get.dart';
@@ -9,12 +11,9 @@ class ApproView extends GetView<ApproController> {
   const ApproView({super.key});
   @override
   Widget build(BuildContext context) {
+    final LivraisonController controller = Get.put(LivraisonController());
     final body = SingleChildScrollView(
-      child: Column(
-        children: [
-          //  ✅ Nouveau widget
-        ],
-      ),
+      child: Column(children: [getLivraisonWidget(controller)]),
     );
     return ClientView(body: body);
   }
