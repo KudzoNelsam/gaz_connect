@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:gaz_connect/app/modules/securite/contacts/contact_function.dart';
+import 'package:gaz_connect/app/modules/securite/contacts/emergency_contacts_controller.dart';
 import 'package:gaz_connect/app/modules/securite/security_settings/security_settings_card.dart';
 import 'package:gaz_connect/app/modules/securite/security_settings/securiy_settings_controller.dart';
+import 'package:gaz_connect/app/modules/securite/system/get_system_test.dart';
+import 'package:gaz_connect/app/modules/securite/system/system_test_controller.dart';
 import 'package:gaz_connect/app/views/views/client_view.dart';
 import 'package:gaz_connect/app/views/views/statut_card_view.dart';
 
@@ -15,7 +19,24 @@ class SecuriteView extends GetView<SecuriteController> {
     final SecuritySettingsController controller = Get.put(
       SecuritySettingsController(),
     );
-    final body = Column(children: [getStatutCard(), getOptions(controller)]);
+    final EmergencyContactsController contactController = Get.put(
+      EmergencyContactsController(),
+    );
+
+    final SystemTestController systemTestController = Get.put(
+      SystemTestController(),
+    );
+
+    final body = SingleChildScrollView(
+      child: Column(
+        children: [
+          getStatutCard(),
+          getOptions(controller),
+          getContacts(contactController),
+          getSystemTest(systemTestController),
+        ],
+      ),
+    );
     return ClientView(body: body);
   }
 
