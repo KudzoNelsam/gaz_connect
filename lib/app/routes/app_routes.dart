@@ -4,19 +4,23 @@ part of 'app_pages.dart';
 abstract class Routes {
   Routes._();
   static const LOGIN = _Paths.LOGIN;
-  static const HOME = _Paths.HOME;
-  static const SECURITE = _Paths.SECURITE;
-  static const SETTINGS = _Paths.SETTINGS;
-  static const CONSO = _Paths.CONSO;
-  static const APPRO = _Paths.APPRO;
+  static const CLIENT_HOME = "${_Paths.CLIENT_HOME}";
+  static const SECURITE = "${_Paths.SECURITE}";
+  static const SETTINGS = "${_Paths.SETTINGS}";
+  static const CONSO = "${_Paths.CONSO}";
+  static const APPRO = "${_Paths.APPRO}";
+  static const TECHNICIEN_HOME = "${_Paths.TECHNICIEN_HOME}";
+  static const ERROR_PAGE = _Paths.ERROR_PAGE;
 }
 
 abstract class _Paths {
   _Paths._();
   static const LOGIN = '/login';
-  static const HOME = '/home';
-  static const SECURITE = '/securite';
-  static const SETTINGS = '/settings';
-  static const CONSO = '/conso';
-  static const APPRO = '/appro';
+  static const CLIENT_HOME = '/client/home';
+  static const SECURITE = '/client/securite';
+  static const SETTINGS = '/client/settings';
+  static const CONSO = '/client/conso';
+  static const APPRO = '/client/appro';
+  static const TECHNICIEN_HOME = '/tech/home';
+  static const ERROR_PAGE = '/error-page';
 }

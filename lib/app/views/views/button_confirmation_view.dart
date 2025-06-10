@@ -34,7 +34,7 @@ class ButtonConfirmationView extends StatefulWidget {
   final bool afficherMessageSucces;
 
   const ButtonConfirmationView({
-    Key? key,
+    super.key,
     // Textes
     this.texteInitial = 'COUPER LE GAZ',
     this.texteConfirmation = 'CONFIRMER COUPURE',
@@ -64,7 +64,7 @@ class ButtonConfirmationView extends StatefulWidget {
     // Messages
     this.messageSucces,
     this.afficherMessageSucces = true,
-  }) : super(key: key);
+  });
 
   @override
   State<ButtonConfirmationView> createState() => _ButtonConfirmationViewState();

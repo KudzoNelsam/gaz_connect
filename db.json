@@ -1,0 +1,212 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "email": "client",
+      "password": "123456",
+      "name": "Mamadou Diallo",
+      "phone": "+221 77 XXX XX XX",
+      "role": "client",
+      "isActive": true,
+      "createdAt": "2024-01-15T10:00:00Z"
+    },
+    {
+      "id": "2",
+      "email": "tech",
+      "password": "123456",
+      "name": "Ahmed Sarr",
+      "phone": "+221 76 XXX XX XX",
+      "role": "technician",
+      "isActive": true,
+      "createdAt": "2024-01-10T08:00:00Z"
+    },
+    {
+      "id": "2255",
+      "email": "",
+      "password": ""
+    },
+    {
+      "id": "48b7",
+      "email": "",
+      "password": ""
+    },
+    {
+      "id": "8fa4",
+      "email": "",
+      "password": ""
+    },
+    {
+      "id": "fe46",
+      "email": "",
+      "password": ""
+    },
+    {
+      "id": "60bf",
+      "email": "",
+      "password": ""
+    },
+    {
+      "id": "4055",
+      "email": "mamadou@client.com",
+      "password": "123456"
+    }
+  ],
+  "consumption": [
+    {
+      "id": "1",
+      "userId": 1,
+      "amount": 2.1,
+      "date": "2025-06-09",
+      "unit": "kg",
+      "period": "daily"
+    },
+    {
+      "id": "2",
+      "userId": 1,
+      "amount": 1.8,
+      "date": "2025-06-08",
+      "unit": "kg",
+      "period": "daily"
+    },
+    {
+      "id": "3",
+      "userId": 1,
+      "amount": 2.4,
+      "date": "2025-06-07",
+      "unit": "kg",
+      "period": "daily"
+    }
+  ],
+  "security_settings": [
+    {
+      "id": "1",
+      "userId": 1,
+      "automaticCutoff": true,
+      "leakAlerts": true,
+      "emergencyCalls": false,
+      "updatedAt": "2025-06-09T12:00:00Z"
+    }
+  ],
+  "emergency_contacts": [
+    {
+      "id": "1",
+      "userId": 1,
+      "name": "Papa",
+      "phone": "+221 77 XXX XX XX",
+      "priority": 1
+    },
+    {
+      "id": "2",
+      "userId": 1,
+      "name": "Service Technique",
+      "phone": "+221 33 XXX XX XX",
+      "priority": 2
+    },
+    {
+      "id": "3",
+      "userId": 1,
+      "name": "Voisin Ahmed",
+      "phone": "+221 76 XXX XX XX",
+      "priority": 3
+    }
+  ],
+  "incidents": [
+    {
+      "id": "1",
+      "userId": 1,
+      "title": "Fuite détectée",
+      "description": "Capteur a détecté une fuite",
+      "type": "leak",
+      "status": "resolved",
+      "date": "2025-05-20T14:32:00Z",
+      "duration": 120,
+      "action": "Coupure automatique"
+    },
+    {
+      "id": "2",
+      "userId": 1,
+      "title": "Niveau critique",
+      "description": "Niveau de gaz critique",
+      "type": "critical_level",
+      "status": "resolved",
+      "date": "2025-05-18T09:15:00Z",
+      "duration": 60,
+      "action": "Commande automatique"
+    }
+  ],
+  "deliveries": [
+    {
+      "id": "1",
+      "userId": 1,
+      "supplierId": 1,
+      "status": "in_progress",
+      "eta": "14:30",
+      "address": "Mamadou Diallo - +221 77 XXX XX XX",
+      "progress": 75,
+      "trackingNumber": "GPE20250609124159",
+      "orderDate": "2025-06-09T10:41:59Z",
+      "estimatedDate": "2025-06-09T14:30:00Z"
+    }
+  ],
+  "suppliers": [
+    {
+      "id": "1",
+      "name": "GazPlus Express",
+      "phone": "+221 33 XXX XX XX",
+      "email": "contact@gazplus.sn"
+    }
+  ],
+  "maintenance": [
+    {
+      "id": "1",
+      "technicianId": 2,
+      "clientId": 1,
+      "type": "inspection",
+      "status": "scheduled",
+      "scheduledDate": "2025-06-16T09:00:00Z",
+      "description": "Maintenance préventive mensuelle",
+      "priority": "medium"
+    },
+    {
+      "id": "2",
+      "technicianId": 2,
+      "clientId": 1,
+      "type": "repair",
+      "status": "completed",
+      "scheduledDate": "2025-05-20T14:00:00Z",
+      "completedDate": "2025-05-20T15:30:00Z",
+      "description": "Réparation fuite détectée",
+      "priority": "high"
+    }
+  ],
+  "installations": [
+    {
+      "id": "1",
+      "technicianId": 2,
+      "clientId": 1,
+      "address": "Dakar, Plateau",
+      "status": "active",
+      "installDate": "2024-01-15T10:00:00Z",
+      "lastInspection": "2025-05-15T14:00:00Z",
+      "nextInspection": "2025-06-15T14:00:00Z",
+      "equipment": {
+        "gasType": "butane",
+        "tankCapacity": "13kg",
+        "detector": "active",
+        "regulator": "good"
+      }
+    }
+  ],
+  "budget": [
+    {
+      "id": "1",
+      "userId": 1,
+      "period": "30_days",
+      "budgetExpected": 16200,
+      "currentMonth": 15750,
+      "lastMonth": 17300,
+      "currency": "FCFA",
+      "calculatedDate": "2025-06-09T12:05:55Z"
+    }
+  ]
+}

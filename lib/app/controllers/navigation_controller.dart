@@ -3,11 +3,12 @@ import 'package:get/get.dart';
 
 class NavigationController extends GetxController {
   var currentIndex = 0.obs; // Index observable pour la BottomNavigationBar
-  var currentRoute = Routes.HOME.obs; // Route actuelle pour suivre la page
+  var currentRoute =
+      Routes.CLIENT_HOME.obs; // Route actuelle pour suivre la page
 
   // Associe les labels des éléments de navigation aux routes
   final Map<String, String> routeMap = {
-    Routes.HOME: Routes.HOME,
+    Routes.CLIENT_HOME: Routes.CLIENT_HOME,
     Routes.SECURITE: Routes.SECURITE,
     Routes.CONSO: Routes.CONSO,
     Routes.APPRO: Routes.APPRO,

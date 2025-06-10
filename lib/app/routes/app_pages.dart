@@ -1,24 +1,28 @@
 import 'package:get/get.dart';
 
-import '../modules/appro/bindings/appro_binding.dart';
-import '../modules/appro/views/appro_view.dart';
-import '../modules/conso/bindings/conso_binding.dart';
-import '../modules/conso/views/conso_view.dart';
-import '../modules/home/bindings/home_binding.dart';
-import '../modules/home/views/home_view.dart';
+import '../modules/client/appro/bindings/appro_binding.dart';
+import '../modules/client/appro/views/appro_view.dart';
+import '../modules/client/conso/bindings/conso_binding.dart';
+import '../modules/client/conso/views/conso_view.dart';
+import '../modules/client/home/bindings/home_binding.dart';
+import '../modules/client/home/views/home_view.dart';
+import '../modules/error_page/bindings/error_page_binding.dart';
+import '../modules/error_page/views/error_page_view.dart';
 import '../modules/login/bindings/login_binding.dart';
 import '../modules/login/views/login_view.dart';
 import '../modules/securite/bindings/securite_binding.dart';
 import '../modules/securite/views/securite_view.dart';
 import '../modules/settings/bindings/settings_binding.dart';
 import '../modules/settings/views/settings_view.dart';
+import '../modules/technicien/home/bindings/technicien_home_binding.dart';
+import '../modules/technicien/home/views/technicien_home_view.dart';
 
 part 'app_routes.dart';
 
 class AppPages {
   AppPages._();
 
-  static const INITIAL = Routes.HOME;
+  static const INITIAL = Routes.LOGIN;
 
   static final routes = [
     GetPage(
@@ -27,9 +31,10 @@ class AppPages {
       binding: LoginBinding(),
     ),
     GetPage(
-      name: _Paths.HOME,
+      name: _Paths.CLIENT_HOME,
       page: () => const HomeView(),
       binding: HomeBinding(),
+      children: [],
     ),
     GetPage(
       name: _Paths.SECURITE,
@@ -50,6 +55,16 @@ class AppPages {
       name: _Paths.APPRO,
       page: () => const ApproView(),
       binding: ApproBinding(),
+    ),
+    GetPage(
+      name: _Paths.ERROR_PAGE,
+      page: () => const ErrorPageView(),
+      binding: ErrorPageBinding(),
+    ),
+    GetPage(
+      name: _Paths.TECHNICIEN_HOME,
+      page: () => const TechnicienHomeView(),
+      binding: TechnicienHomeBinding(),
     ),
   ];
 }

@@ -27,7 +27,7 @@ class ClientView extends GetView {
         ),
       ],
       itemLabels: [
-        Routes.HOME,
+        Routes.CLIENT_HOME,
         Routes.SECURITE,
         Routes.CONSO,
         Routes.APPRO,

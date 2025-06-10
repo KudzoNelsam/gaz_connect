@@ -16,7 +16,7 @@ class StatusCard extends StatelessWidget {
   final String? texteBadge;
 
   const StatusCard({
-    Key? key,
+    super.key,
     required this.titre,
     required this.sousTitre,
     this.type = StatusType.info,
@@ -26,7 +26,7 @@ class StatusCard extends StatelessWidget {
     this.onTap,
     this.afficherBadge = true,
     this.texteBadge,
-  }) : super(key: key);
+  });
 
   Color _getCouleurPrincipale() {
     if (couleurPersonnalisee != null) return couleurPersonnalisee!;

@@ -243,6 +243,7 @@ class UserProfileController extends GetxController {
   */
 
   // ✅ Refresh manuel
+  @override
   Future<void> refresh() async {
     print('[2025-06-09 12:52:38] nelsam12 - Refresh des données profil');
     await loadUserProfile();

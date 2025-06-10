@@ -25,14 +25,14 @@ class SecuritySettingsCard extends StatefulWidget {
   final EdgeInsets? margin;
 
   const SecuritySettingsCard({
-    Key? key,
+    super.key,
     this.titre = 'Paramètres de Sécurité',
     required this.options,
     this.onSettingsChanged,
     this.couleurAccent = Colors.blue,
     this.padding,
     this.margin,
-  }) : super(key: key);
+  });
 
   @override
   State<SecuritySettingsCard> createState() => _SecuritySettingsCardState();
@@ -160,7 +160,7 @@ class _SecuritySettingsCardState extends State<SecuritySettingsCard> {
                   ],
                 ],
               );
-            }).toList(),
+            }),
           ],
         ),
       ),

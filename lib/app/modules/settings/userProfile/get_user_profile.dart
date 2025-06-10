@@ -74,7 +74,7 @@ Widget _buildLoadingState() {
 }
 
 Widget _buildEmptyState() {
-  return Container(
+  return SizedBox(
     height: 80,
     child: const Center(
       child: Column(
