@@ -18,29 +18,26 @@ class UserConnectedAdapter extends TypeAdapter<UserConnected> {
     };
     return UserConnected(
       id: fields[0] as String,
-      nom: fields[1] as String,
-      prenom: fields[2] as String,
-      email: fields[3] as String,
-      telephone: fields[4] as String,
-      role: fields[5] as Role,
+      nomComplet: fields[1] as String,
+      email: fields[2] as String,
+      telephone: fields[3] as String,
+      role: fields[4] as Role,
     );
   }
 
   @override
   void write(BinaryWriter writer, UserConnected obj) {
     writer
-      ..writeByte(6)
+      ..writeByte(5)
       ..writeByte(0)
       ..write(obj.id)
       ..writeByte(1)
-      ..write(obj.nom)
+      ..write(obj.nomComplet)
       ..writeByte(2)
-      ..write(obj.prenom)
-      ..writeByte(3)
       ..write(obj.email)
-      ..writeByte(4)
+      ..writeByte(3)
       ..write(obj.telephone)
-      ..writeByte(5)
+      ..writeByte(4)
       ..write(obj.role);
   }
 

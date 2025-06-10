@@ -9,20 +9,17 @@ class UserConnected {
   @HiveField(0)
   final String id;
   @HiveField(1)
-  final String nom;
+  final String nomComplet;
   @HiveField(2)
-  final String prenom;
-  @HiveField(3)
   final String email;
-  @HiveField(4)
+  @HiveField(3)
   final String telephone;
-  @HiveField(5)
+  @HiveField(4)
   final Role role;
 
   UserConnected({
     required this.id,
-    required this.nom,
-    required this.prenom,
+    required this.nomComplet,
     required this.email,
     required this.telephone,
     required this.role,
@@ -31,8 +28,7 @@ class UserConnected {
   factory UserConnected.toEntity(Map<String, dynamic> response) {
     return UserConnected(
       id: response["id"] ?? "1",
-      nom: response["nom"] ?? "Doe",
-      prenom: response["prenom"] ?? "John",
+      nomComplet: response["nomComplet"] ?? "Doe",
       email: response["email"] ?? "john@doe",
       telephone: response["telephone"] ?? "+221 77 346 18 82",
       role: Role.get(response["role"])!,
