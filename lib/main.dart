@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:gaz_connect/app/controllers/navigation_controller.dart';
 import 'package:gaz_connect/app/core/network/api_constant.dart';
 import 'package:gaz_connect/app/core/network/impl/auth_service_auth_impl.dart';
+import 'package:gaz_connect/app/core/network/impl/client_service.dart';
+import 'package:gaz_connect/app/core/network/impl/tech_service_impl.dart';
 import 'package:gaz_connect/app/core/network/role_adapter.dart';
 import 'package:gaz_connect/app/core/network/user_connected.dart';
 import 'package:gaz_connect/app/modules/settings/notification/notification_controller.dart';
@@ -25,6 +27,8 @@ void main() async {
 
   // ✅ INITIALISER LE CONTROLLER GLOBAL EN PREMIER
   Get.put(NotificationSettingsController(), permanent: true);
+  Get.put(TechServiceImpl());
+  Get.put(ClientServiceImpl());
   runApp(
     GetMaterialApp(
       debugShowCheckedModeBanner: false,

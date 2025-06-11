@@ -11,6 +11,10 @@ abstract class Routes {
   static const APPRO = "${_Paths.APPRO}";
   static const TECHNICIEN_HOME = "${_Paths.TECHNICIEN_HOME}";
   static const ERROR_PAGE = _Paths.ERROR_PAGE;
+  static const TECHNICIEN_INSTALLATIONS =
+      _Paths.TECHNICIEN_INSTALLATIONS ;
+  static const TECHNICIEN_INTERVENTIONS =
+      _Paths.TECHNICIEN_INTERVENTIONS ;
 }
 
 abstract class _Paths {
@@ -23,4 +27,6 @@ abstract class _Paths {
   static const APPRO = '/client/appro';
   static const TECHNICIEN_HOME = '/tech/home';
   static const ERROR_PAGE = '/error-page';
+  static const TECHNICIEN_INSTALLATIONS = '/installations';
+  static const TECHNICIEN_INTERVENTIONS = '/interventions';
 }

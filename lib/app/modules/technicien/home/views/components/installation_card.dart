@@ -1,18 +1,29 @@
+// widgets/installation_card.dart
 import 'package:flutter/material.dart';
-
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import '../../../models/installation_response.dart';
+import '../../../views_other/client_details_view.dart';
 
-class ClientCard extends StatelessWidget {
-  final Client client;
+class InstallationCard extends StatelessWidget {
+  final InstallationResponse installation;
 
-  const ClientCard({super.key, required this.client});
+  const InstallationCard({super.key, required this.installation});
 
   @override
   Widget build(BuildContext context) {
-
     return InkWell(
-      onTap: (){
-        print(this);
+      onTap: () {
+        // Navigation avec clé unique
+        Get.to(
+              () => ClientDetailsView(
+            key: Key('client_details_${installation.clientId}_${DateTime.now().millisecondsSinceEpoch}'),
+            installationId: installation.id,
+            clientId: installation.clientId,
+            clientName: installation.nomComplet,
+            nbrCapteursCommandes: installation.nbrCapteur,
+          ),
+        );
       },
       child: Container(
         margin: const EdgeInsets.only(bottom: 12.0),
@@ -22,7 +33,7 @@ class ClientCard extends StatelessWidget {
           borderRadius: BorderRadius.circular(8.0),
           border: Border(
             left: BorderSide(
-              color: Colors.blue,
+              color: installation.statut.statutBorderColor,
               width: 4.0,
             ),
           ),
@@ -41,28 +52,35 @@ class ClientCard extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(
-                  client.name,
-                  style: const TextStyle(
-                    fontSize: 16.0,
-                    fontWeight: FontWeight.w600,
-                    color: Colors.blue,
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        installation.nomComplet,
+                        style: const TextStyle(
+                          fontSize: 16.0,
+                          fontWeight: FontWeight.w600,
+                          color: Colors.blue,
+                        ),
+                      ),
+                      const SizedBox(height: 2.0),
+                      Text(
+                        'Téléphone: ${installation.telephone}',
+                        style: TextStyle(
+                          fontSize: 12.0,
+                          color: Colors.grey[600],
+                        ),
+                      ),
+                    ],
                   ),
                 ),
-                _buildStatusChip(client.status),
+                _buildStatusChip(installation.statut),
               ],
-            ),
-            const SizedBox(height: 4.0),
-            Text(
-              'ID: ${client.id}',
-              style: TextStyle(
-                fontSize: 12.0,
-                color: Colors.grey[600],
-              ),
             ),
             const SizedBox(height: 8.0),
             Text(
-              client.address,
+              installation.adresse,
               style: TextStyle(
                 fontSize: 14.0,
                 color: Colors.grey[700],
@@ -72,7 +90,7 @@ class ClientCard extends StatelessWidget {
             Row(
               children: [
                 Text(
-                  '${client.capteurs} capteurs',
+                  '${installation.nbrCapteur} capteurs',
                   style: TextStyle(
                     fontSize: 14.0,
                     color: Colors.grey[700],
@@ -80,57 +98,35 @@ class ClientCard extends StatelessWidget {
                   ),
                 ),
                 const Spacer(),
-                Text(
-                  '${client.bouteilles} bouteilles',
-                  style: const TextStyle(
-                    fontSize: 14.0,
-                    color: Colors.orange,
-                    fontWeight: FontWeight.w600,
-                  ),
-                ),
+                // Text(
+                //   '${installation.nbrBouteilles} bouteilles',
+                //   style: const TextStyle(
+                //     fontSize: 14.0,
+                //     color: Colors.orange,
+                //     fontWeight: FontWeight.w600,
+                //   ),
+                // ),
               ],
             ),
           ],
         ),
       ),
-    ) ;
+    );
   }
 
-  Widget _buildStatusChip(ClientStatus status) {
-    Color backgroundColor;
-    Color textColor;
-    String text;
-
-    switch (status) {
-      case ClientStatus.actif:
-        backgroundColor = Colors.green[100]!;
-        textColor = Colors.green[700]!;
-        text = 'Actif';
-        break;
-      case ClientStatus.aInstaller:
-        backgroundColor = Colors.blue[100]!;
-        textColor = Colors.blue[700]!;
-        text = 'À installer';
-        break;
-      case ClientStatus.aVerifier:
-        backgroundColor = Colors.orange[100]!;
-        textColor = Colors.orange[700]!;
-        text = 'À vérifier';
-        break;
-    }
-
+  Widget _buildStatusChip(String statut) {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
       decoration: BoxDecoration(
-        color: backgroundColor,
+        color: statut.statutBackgroundColor,
         borderRadius: BorderRadius.circular(12.0),
       ),
       child: Text(
-        text,
+        statut.statutLabel,
         style: TextStyle(
           fontSize: 12.0,
           fontWeight: FontWeight.w500,
-          color: textColor,
+          color: statut.statutColor,
         ),
       ),
     );

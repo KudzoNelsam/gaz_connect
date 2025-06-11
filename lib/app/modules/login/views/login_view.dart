@@ -38,15 +38,7 @@ class LoginView extends GetView<LoginController> {
         Container(
           width: 60,
           height: 60,
-          decoration: const BoxDecoration(
-            color: Color(0xFF2196F3),
-            shape: BoxShape.circle,
-          ),
-          child: const Icon(
-            Icons.local_fire_department,
-            color: Colors.white,
-            size: 30,
-          ),
+          child: Image.network("https://res.cloudinary.com/dt6pmqjsk/image/upload/v1749543582/GazConnect-removebg-preview_lqsc8i.png"),
         ),
         const SizedBox(height: 16),
         const Text(

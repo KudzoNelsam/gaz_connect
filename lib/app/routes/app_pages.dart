@@ -16,6 +16,8 @@ import '../modules/settings/bindings/settings_binding.dart';
 import '../modules/settings/views/settings_view.dart';
 import '../modules/technicien/home/bindings/technicien_home_binding.dart';
 import '../modules/technicien/home/views/technicien_home_view.dart';
+import '../modules/technicien/interventions/bindings/technicien_interventions_binding.dart';
+import '../modules/technicien/interventions/views/technicien_interventions_view.dart';
 
 part 'app_routes.dart';
 
@@ -65,6 +67,12 @@ class AppPages {
       name: _Paths.TECHNICIEN_HOME,
       page: () => const TechnicienHomeView(),
       binding: TechnicienHomeBinding(),
+    ),
+
+    GetPage(
+      name: _Paths.TECHNICIEN_INTERVENTIONS,
+      page: () => const TechnicienInterventionsView(),
+      binding: TechnicienInterventionsBinding(),
     ),
   ];
 }

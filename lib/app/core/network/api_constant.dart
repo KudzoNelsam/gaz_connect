@@ -2,7 +2,7 @@
 class ApiConstants {
   // Base URLs par environnement
   static const String baseUrlDev = 'http://localhost:3000';
-  static const String baseUrlProd = 'http://192.168.1.17:10000';
+  static const String baseUrlProd = 'https://gazconnect-ja01.onrender.com';
   static const String boxName = 'auth_box';
 
   // Endpoints principaux
